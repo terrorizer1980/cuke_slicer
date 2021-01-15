@@ -20,7 +20,10 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 1.9.3', '< 4.0'
 
-  spec.add_runtime_dependency "cuke_modeler", "< 4.0"
+  # Locking < 3 given that cuke_modeler ~> 3.0
+  # requires cucumber 4
+  # https://github.com/enkessler/cuke_modeler/issues/6
+  spec.add_runtime_dependency 'cuke_modeler', '>= 0.2', '< 3.0'
 
   spec.add_development_dependency 'bundler', '< 3.0'
   spec.add_development_dependency 'rake', '< 13.0.0'
@@ -30,5 +33,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "racatt", '~> 1.0'
   spec.add_development_dependency 'coveralls', '< 1.0.0'
   spec.add_development_dependency 'rainbow', '< 4.0.0'
-
 end
